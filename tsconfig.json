@@ -7,7 +7,12 @@
     "strict": true,
     "allowJs": true,
     "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@styled/*": ["src/components/styled/*"]
+    },
   },
   "exclude": ["node_modules"]
 }

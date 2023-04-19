@@ -10,7 +10,10 @@ module.exports = {
     mode: 'development',
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.tsx', '.js'],
+        alias: {
+            '@styled': path.resolve(__dirname, 'src', 'components', 'styled')
+        }
     },
     
     devServer: {
