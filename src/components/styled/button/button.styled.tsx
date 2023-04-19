@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled, {css} from 'styled-components'
 import cssVariables from "../css-variables";
-import {ButtonUIProps} from "./button";
+import {ButtonUIProps} from "./button.types";
 
 const ButtonUI = styled.button<ButtonUIProps>`
   width: 109px;
@@ -12,23 +12,40 @@ const ButtonUI = styled.button<ButtonUIProps>`
   border: none;
   border-radius: 4px;
   outline: none;
+  
+  &:hover {
+    opacity: .85;
+  }
+
+  &:disabled {
+    opacity: .3;
+  }
 
   ${
-          props => props.primary && css`
+          ({ variant }) => (!variant || variant === 'primary') && css`
             background: ${cssVariables.primary.backgroundColor};
             color: ${cssVariables.primary.color};
 
-            &:hover {
-              opacity: .7;
-            }
 
             &:active {
-              background: ${cssVariables.primary.active.backgroundColor}
+              background: ${cssVariables.primary.active.backgroundColor};
             }
+          `
+  }
 
-            &:disabled {
-              opacity: .3;
-            }
+  ${
+          ({ variant }) => variant === 'secondary' && css`
+            background: ${cssVariables.secondary.backgroundColor};
+            color: ${cssVariables.secondary.color};
+            border: 1px solid ${cssVariables.secondary.borderColor};
+          `
+  }
+  
+  ${
+          ({ variant }) => variant === 'danger' && css`
+            background: ${cssVariables.danger.backgroundColor};
+            color: ${cssVariables.danger.color};
+            border: 1px solid ${cssVariables.danger.borderColor};
           `
   }
 `
