@@ -1,9 +1,8 @@
 import { FC } from "react"
+import WelcomePage from './pages/welcome'
 
 const App: FC = () => {
-    return <>
-        <h1>Hello world!</h1>
-    </>
+    return <WelcomePage/>
 }
 
 export default App

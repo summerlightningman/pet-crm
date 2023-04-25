@@ -12,7 +12,8 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
         alias: {
-            '@styled': path.resolve(__dirname, 'src', 'components', 'styled')
+            '@styled': path.resolve(__dirname, 'src', 'components', 'styled'),
+            '@assets': path.resolve(__dirname, 'src', 'assets')
         }
     },
     
@@ -40,8 +41,8 @@ module.exports = {
                 use: ['json-loader']
             },
             {
-                test: /\.(png|jpeg|jpg)$/,
-                use: ['file-loader']
+                test: /\.(png|jpeg|jpg|gif)$/i,
+                type: 'asset/resource'
             }
         ]
     },
