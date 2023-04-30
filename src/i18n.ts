@@ -11,7 +11,7 @@ i18n
             ru: {
                 translation: {
                     welcome: {
-                        header: 'Добро пожаловать на пет-проект PET-CRM!'
+                        header: 'Добро пожаловать <br /> на пет-проект PET-CRM!'
                     }
                 }
             }
